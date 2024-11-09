@@ -30,17 +30,84 @@ header nav{
     padding: 20px;
      
 }
+.sidebar{
+    position: fixed;
+    right: 20%;
+    left: 8%;
+    top: 17%;
+    height: 30vh; 
+    width: 85%;
+    z-index: 999;
+    background-color: white;
+    color: black;
+    list-style: none;
+    display: grid;
+    place-content: center;
+    gap: px;
+    display: none;
+  
+}
+
+#menu-logo{
+    display: none;
+}
+.triangle{
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-right: 55px solid white;
+    border-bottom: 30px solid transparent;
+    position: fixed;
+    right: 6.6%;
+    top: 13%;
+}
+.bar{
+   
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 20px;
+}
+.s-li{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: gray;
+    font-weight: 500;
+    font-size: 13px;
+    text-align: center;
+}
 .logo-1{
     width: 200px;
     padding: 0%;
+    
 }
 
-ol{
+nav ol{
     display: flex;
     gap: 2rem;
     list-style: none;
     border-radius: 5px;
     color: aliceblue;
+ 
+    
+}
+.H{
+    position: relative;
+}
+.H:after{
+    content: "";
+    position: absolute;
+    background-color: aliceblue;
+    width: 0;
+    height: 2px;
+    top: 50%;
+    right: 10%;
+    left: 0%;
+    bottom: -1px;
+
+}
+.H:hover:after{
+    transition: 0.9s;
+    width: 100%;
     
 }
 header h1{
@@ -59,27 +126,18 @@ header h1{
     
     
 }
-    .H:hover{
-        background-color: aliceblue;
-        color: black;
-        border-radius: 25px;
-        padding: 5px 7px 5px 7px;
-        text-transform: uppercase;
-        font-family: 'Courier New', Courier, monospace;
-        font-weight: bold;     
-    }
+     .H:hover{
+    transform: scale(1.2);
+    } 
 
     .grid{
 
         grid-template-columns: 1fr 1fr;
         display: grid;
+        height:200vh;
         
     }
-    .grid-box{
-        height: 600px;
-        
-
-    }
+   
     .box-1{
         height: 100%;
         align-content: center;
@@ -93,6 +151,7 @@ header h1{
     .transform{
        max-width: 500px;
        margin: 20px;
+  
        
     
 
@@ -103,6 +162,7 @@ header h1{
         font-family: prom;
         font-size: 37px;
         max-width: 350px;
+      
     }
     .transform p {
         font-size: 15px;
@@ -113,6 +173,7 @@ header h1{
         font-weight: 600;
         word-spacing: 0.1rem;
         max-width: 400px;
+        
     
     }
     .len-1{
@@ -429,15 +490,19 @@ background-color: rgb(34, 224, 209);
 
 @media(max-width:768px){
     header{
-    background-image: url(./images/mobile/image-header.jpg);
+    background-image: url(./images/mobile/image-header.jpg); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    min-height: 70vh;
+    min-height: 50vh;
     }
     .arrow{
-        margin-top: 100px;
+        margin-top:0px;
+        transform: scale(0.7);
     }
+    /* .sidebar{
+       width: 100%;;
+    } */
     header h1{
     text-align:center ;
     color: aliceblue;
@@ -448,49 +513,69 @@ margin-top: 55px;}
 
    .logo-1{
     width: 80px;
+    height: 18px;
    }
    header nav{
     padding: 10px;
    }
-   .arrow{
-    width: 30px;
-   }
-
-
+ 
+   #menu-logo{
+    display: flex;
+}
 
 
   .transform{
-padding: 10px;
+
+padding: 0px;
 text-align: center;
-margin-bottom: 0%;
-max-width: 350px;
+margin: 5%;
+
+
         }
     
 .transform h1{
-    font-size:25px ;
+    font-size:20px ;
     margin-bottom: 30px;
+    max-width: 400px;
+    padding: 0%;
+    
+   
 }
 .transform p{
-    font-size: 13px;
-    line-height: 20px;  
+    font-size: 14px;
+    line-height: 20px; 
+    padding: 0%;
+    margin: 0%;
+    font-family: Arial, Helvetica, sans-serif;
+    word-spacing: 0rem;
+    width: 100%;
  
  
     
 
 }
 .standout{
-    padding: 10px;
+    padding: 0px;
     text-align: center;
-    margin-bottom: 0%;
-    max-width: 270px;
+    margin-bottom: 20%;
+ 
+    
 }
 .standout h1{
-    font-size:25px ;
+    font-size:20px ;
     margin-bottom: 30px;
+    max-width: 400px;
+    padding: 0%;
 }
     .standout p{
-    font-size: 13px;
-    line-height: 20px
+        font-size: 14px;
+        line-height: 20px; 
+        padding: 0%;
+        margin: 0px;
+        font-family: Arial, Helvetica, sans-serif;
+        word-spacing: 0rem;
+      
+      width:100%;
     }
 
 
@@ -538,25 +623,41 @@ max-width: 350px;
     .end{
         grid-template-columns: 1fr 1fr;
     }
-    .grid{
-        flex-direction: column;
-        display: flex;
+    .grid {
+        height: 250vh;
+        display: flex; /* This is essential for order to work */
+        gap: 0rem; /* Optional: space between elements */
+        flex-direction: column; /* Default horizontal layout */
+    
     }
-    nav ol{
+    .box-1 {
+        order: -1; /* Box 1 will come after Box 2 */
+    }
+    
+    .box-2 {
+        order: -2; /* Box 2 will come before Box 1 */
+    }
+    
+    .box-3, .box-4, .box-5, .box-6 {
+        order: 0; /* Default order for the other boxes */
+    }
+    .H{
         display: none;
     }
-    .grid-box{
-        height: 300px;
-    }
+   
+
     
     
     .test-2{
         margin-top: 25px;
 }
-.box-1{
- 
-    display: flex;
-   order: -1;
+.test{
+    padding: 15px;
 }
-
+.s-li:hover{
+    color: black;
+    background-color: yellow;
+    padding: 10px;
+    border-radius: 30px;
+}
 }
