@@ -33,7 +33,7 @@ header nav{
 .sidebar{
     position: fixed;
     right: 20%;
-    left: 8%;
+    left: 8.3%;
     top: 17%;
     height: 30vh; 
     width: 85%;
@@ -45,6 +45,8 @@ header nav{
     place-content: center;
     gap: px;
     display: none;
+    border-radius: 10px;
+    box-shadow: 1px 2px 3px gray
   
 }
 
@@ -74,6 +76,7 @@ header nav{
     font-weight: 500;
     font-size: 13px;
     text-align: center;
+    margin-top: 5px;
 }
 .logo-1{
     width: 200px;
@@ -657,7 +660,9 @@ margin: 5%;
 .s-li:hover{
     color: black;
     background-color: yellow;
-    padding: 10px;
+    padding: 7px;
     border-radius: 30px;
+
+    transition: 0.6s;
 }
 }
